@@ -5,11 +5,7 @@ export const rawHTML = `
     <meta name="description" content="A tool for more advanced FFXIV opener creation."/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <!-- Links .css files -->
-    <link rel="stylesheet" type="text/css" href="./styles/index.css" />
-
      <!-- Links script files -->
-     <script src="./test.js" type="module"></script>
      <script src="./server.cjs"></script>
      <script src="./scripts/index.js" type="module"></script>
      <script src="./modules/Ability.js" type="module"></script>
