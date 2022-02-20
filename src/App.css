@@ -37,3 +37,250 @@
     transform: rotate(360deg);
   }
 }
+
+header {
+  background-color: #3b3b3b;
+  color: #ffffff;
+  height: 60px;
+  width: 99%;
+  border: solid;
+  border-color: #252525;
+  border-radius: 15px;
+  border-width: 10px;
+  display: flex;
+  justify-content: center;
+}
+#page-title{
+  font-size: xx-large;
+  align-self: center;
+}
+#discord-btn{
+  font-size: large;
+  position: absolute;
+  right: 1%;
+  top: 2%;
+}
+
+html, body{
+  margin:0;
+  height:100%;
+  overflow:hidden;
+}
+
+body {
+  background-color: #252525;
+  color: #ffffff;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+h2 {
+  text-align: center;
+}
+
+main {
+  height: calc(100vh - 15px - 50px - 31px);
+  /*display: grid;
+  grid-template-columns: 50px auto;
+  grid-template-areas: "Job-Select main";*/
+  display: flex;
+}
+
+#Job-Select {
+  grid-area: Job-Select;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;   
+  padding: 0px 0 0 0px;
+  margin: 0 0 0 10px;
+
+  background-color: #2a2a2a;
+  border: solid;
+  border-color: #f5f5f5;
+  border-radius: 10px;
+  cursor: pointer;
+
+  width: 52px;
+  height: 100.75%;
+}
+.JobSelect-Icon {
+  min-height: 46px;
+  min-width: 46px;
+  border: solid;
+  border-color: #e2cb87;
+  border-radius: 13px;
+  margin: 2px;
+  background-size: 40px;
+  opacity: 0.5;
+}
+#Job-Select input[type="radio"] {
+  appearance: none;
+  cursor: pointer;
+}
+#Job-Select input[type="radio"]:checked {
+  opacity: 1;
+}
+
+footer {
+  display: inline-flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 40px;
+}
+
+#content{
+  padding: 0 0 0 5px;
+  width: 100%;
+}
+
+/*Rotation display stuff*/
+
+#rotation-display {
+  min-height: 44%;
+  display: flex;
+}
+#rotation-skills {
+  margin: auto;
+  padding: 0px 20px 0px 30px;
+}
+.rotation-icon {
+  width: 55px;
+  height: 55px;
+  border: solid;
+  border-color: #00000054;
+  border-radius: 10px;
+  border-width:2px;
+}
+.ogcd-offset{
+  margin: 0 0 20px 0;
+}
+
+
+@media screen and (min-width: 821px) {
+  #ability-select {
+      display: grid;
+      grid-column: span 2;
+      grid-auto-columns: 19.77%;
+      grid-auto-rows: 485px;
+      grid-column-gap: 5px;
+      margin: 5px 0;
+  }
+  #description {
+      grid-column: 1;
+  }
+  #gcd-select {
+      grid-column: 2;
+  }
+  #ogcd-select {
+      grid-column: 3;
+  }
+  #role-other-container {
+      grid-column: 4;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 5px;
+  }
+  #data-display {
+      grid-column: 5;
+  }
+}
+#role-select{
+  height: 49%;
+}
+#other-select{
+  height: 49%;
+}
+
+#gcd-list {
+  padding: 0px 25px 20px 25px;
+}
+#ogcd-list {
+  padding: 0px 25px 20px 25px;
+}
+#role-list {
+  padding: 0px 25px 20px 25px;
+}
+#other-list {
+  padding: 0px 25px 20px 25px;
+}
+
+.list-label {
+  padding: 5px;
+  text-align: center;
+}
+
+
+button {
+  background-color: #2a2a2a;
+  border: solid;
+  border-color: #f5f5f5;
+  border-radius: 10px;
+  color: #f5f5f5;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.border-div {
+  background-color: #2a2a2a;
+  border: solid;
+  border-color: #f5f5f5;
+  border-radius: 10px;
+  color: #f5f5f5;
+  cursor: pointer;
+  padding: 5px;
+  display: grid;
+  justify-content: center;
+  grid-template-rows: min-content auto;
+}
+
+.skill-icon-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-y: scroll;
+  align-content: center;
+  
+  padding: 10px;
+}
+
+#Special-GCD-List,
+#Special-OGCD-List {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #e2cb87;
+  border-radius: 13px;
+}
+.Skill-Icon {
+  width: 47px;
+  height: 47px;
+  border: solid;
+  border-width: 2px;
+  border-color: #e2cb87;
+  border-radius: 13px;
+  margin: 2px;
+  cursor: pointer;
+}
+
+#description-header{
+  margin: 20px 0 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#description-title{
+  width: 75%px;
+}
+#description-img{
+  width: 75px;
+  border: solid;
+  border-color: #e2cb87;
+  border-radius: 10px;
+  border-width:2px;
+}
+
+::-webkit-scrollbar {
+  display: none; /*Hide scrollbar*/
+  width: 0px; /* Remove scrollbar space */
+  background: transparent; /* Make scrollbar invisible */
+}

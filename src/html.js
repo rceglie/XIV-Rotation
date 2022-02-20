@@ -9,6 +9,7 @@ export const rawHTML = `
     <link rel="stylesheet" type="text/css" href="./styles/index.css" />
 
      <!-- Links script files -->
+     <script src="./test.js" type="module"></script>
      <script src="./server.cjs"></script>
      <script src="./scripts/index.js" type="module"></script>
      <script src="./modules/Ability.js" type="module"></script>
@@ -64,6 +65,7 @@ export const rawHTML = `
                     <h1 id="results-header">Results</h1>
                     <p id="data-text"></p>
                     <p id="data-text2"></p>
+                    <p id="test"></p>
                 </div>
             </div>
         </div>
