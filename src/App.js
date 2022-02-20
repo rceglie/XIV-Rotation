@@ -1,10 +1,11 @@
 import './App.css';
+import { rawHTML } from './html.js';
+import { Parser } from 'html-to-react'
 
 function App() {
   return (
     <div className="App">
-      <h1>My React App</h1>
-      <h2>Author: Robert Ceglie333</h2>
+       {Parser().parse(rawHTML)}
     </div>
   );
 }
