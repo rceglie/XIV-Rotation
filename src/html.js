@@ -4,18 +4,6 @@ export const rawHTML = `
     <title>FFXIV Opener Tool</title>
     <meta name="description" content="A tool for more advanced FFXIV opener creation."/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-     <!-- Links script files -->
-     <script src="./server.cjs"></script>
-     <script src="./scripts/index.js" type="module"></script>
-     <script src="./modules/Ability.js" type="module"></script>
-     <script src="./modules/gcdoverrides.js" type="module"></script>
-     <script src="./modules/globalskillslist.js" type="module"></script>
-     <script src="./modules/ogcdoverrides.js" type="module"></script>
-     <script src="./modules/skillblacklist.js" type="module"></script>
-     <script src="./modules/skillwhitelist.js" type="module"></script>
-
-
 </head>
 
 <body>

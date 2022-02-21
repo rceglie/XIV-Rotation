@@ -1,5 +1,5 @@
-import './App.css';
-import './test.js';
+import './style/App.css';
+import './scripts/source.js';
 import { rawHTML } from './html.js';
 import { Parser } from 'html-to-react'
 
