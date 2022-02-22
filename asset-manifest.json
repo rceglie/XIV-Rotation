@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/XIV-Rotation2/static/css/main.25a0b9fc.css",
-    "main.js": "/XIV-Rotation2/static/js/main.9e118ff5.js",
+    "main.js": "/XIV-Rotation2/static/js/main.2a8df58d.js",
     "index.html": "/XIV-Rotation2/index.html",
     "main.25a0b9fc.css.map": "/XIV-Rotation2/static/css/main.25a0b9fc.css.map",
-    "main.9e118ff5.js.map": "/XIV-Rotation2/static/js/main.9e118ff5.js.map"
+    "main.2a8df58d.js.map": "/XIV-Rotation2/static/js/main.2a8df58d.js.map"
   },
   "entrypoints": [
     "static/css/main.25a0b9fc.css",
-    "static/js/main.9e118ff5.js"
+    "static/js/main.2a8df58d.js"
   ]
 }
