@@ -8,7 +8,7 @@ export const rawHTML = `
 
 <body>
     <header>
-        <h1 id="page-title">FFXIV Opener Tool</h1>
+        <h1 id="page-title">FFXIV Rotation Tool</h1>
         <button id="discord-btn" onclick="discord_btn_click()">Discord</button>
     </header>
     <main>

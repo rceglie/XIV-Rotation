@@ -4,6 +4,8 @@ import { globalSkillsList } from '../modules/globalskillslist.js'
 import { gcdOverrides } from '../modules/gcdoverrides.js'
 import { ogcdOverrides } from '../modules/ogcdoverrides.js'
 import { Ability } from '../modules/Ability.js'
+import { allAbilities } from '../modules/allAbilities.js'
+import { allBuffs } from '../modules/allBuffs.js'
 
 let jobList = [];
 let jobSkills = {};
@@ -13,50 +15,6 @@ let currentJobId = 0;
 
 let rotation = [];
 let rotationBuffs = [];
-
-const allAbilities = [
-{
-    ID: 31,
-    Name: "Heavy Swing",
-    potency: 200,
-    gcd: 1
-},
-{
-    ID: 37,
-    Name: "Maim",
-    comboAction: "Heavy Swing",
-    potency: 130,
-    comboPotency: 280,
-    gauge: 10,
-    gcd: 1
-},
-{
-    ID: 42,
-    Name: "Storm's Path",
-    comboAction: "Maim",
-    potency: 120,
-    comboPotency: 400,
-    gauge: 20,
-    gcd: 1
-},
-{
-    ID: 45,
-    Name: "Storm's Eye",
-    comboAction: "Maim",
-    potency: 120,
-    comboPotency: 400,
-    gauge: 10,
-    buff: "Surging Tempest",
-    gcd: 1
-}
-];
-
-const allBuffs = [
-{
-    Name: "Storm's Eye",
-    damage: ".1",
-}
-];
 
 const xivapi_request = "https://xivapi.com/ClassJob?columns=ID,Name,Icon,ClassJobCategory.Name,ClassJobCategory.ID,Role,IsLimitedJob,ItemSoulCrystalTargetID,Abbreviation";
 
@@ -94,25 +52,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 return roleSortOrder.indexOf(a.Role) - roleSortOrder.indexOf(b.Role);
             });
 
-            // Add the Inputs
+            // Creates a job selection button for every job
             jobList.forEach(job => {
-                let JobSelectInput = document.createElement("input");
-                JobSelectInput.type = "radio";
-                JobSelectInput.name = "JobSelect";
-                JobSelectInput.classList = `JobSelect-Icon Role-${job.Role}`;
-                // Add a onClick event passing job ID
-                JobSelectInput.setAttribute("onclick", `getJobSkills(${job.ID})`);
-                // Add a CSS background-image
-                JobSelectInput.style.backgroundImage = `url('https://xivapi.com${job.Icon}')`;
-                // Add a custom color based on role for the background-image
-                JobSelectInput.style.backgroundColor = jobSelectBackgroundColor(job.Role);
-                // Add it to the HTML
-                document.getElementById("Job-Select").appendChild(JobSelectInput);
+                let JobSelectBtn = document.createElement("input");
+                JobSelectBtn.type = "radio";
+                JobSelectBtn.name = "JobSelect";
+                JobSelectBtn.classList = `JobSelect-Icon Role-${job.Role}`;
+                JobSelectBtn.onclick = function() { getJobSkills(job.ID) };
+                JobSelectBtn.style.backgroundImage = `url('https://xivapi.com${job.Icon}')`;
+                JobSelectBtn.style.backgroundColor = jobSelectBackgroundColor(job.Role);
+                document.getElementById("Job-Select").appendChild(JobSelectBtn);
             });
         })
         .catch(function (ex) {
             console.log("parsing failed", ex);
         });
+        
     // Make the rotation div sortable (calls sortableJS that is imported index.html)
     // may break for older browsers ???
     // will need to switch to something better at some point.
@@ -120,7 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
     //new Sortable(document.getElementById("Rotation-Buffs"));
     
 });
-
 
 function jobSelectBackgroundColor(role) {
     switch (role) {
@@ -136,6 +90,7 @@ function jobSelectBackgroundColor(role) {
 }
 
 function getJobSkills(jobID) {
+
     // Loads in all skills from url and puts them in either allJobSkills or allRoleSkills
     
     let JOB = jobList.find(x => x.ID === jobID).Abbreviation;
@@ -153,6 +108,8 @@ function getJobSkills(jobID) {
         .catch(function (ex) {
             console.log('parsing failed', ex)
         })
+
+    return 0
 }
 
 function sortJobSkills(jobID) {
@@ -210,7 +167,7 @@ function sortJobSkills(jobID) {
             }
         });
     
-        globalSkillsList.forEach((skill) => {
+        /*globalSkillsList.forEach((skill) => {
             // If it's Pull (Placeholder)
             if (skill.ID == 0) {
                 addImageToList("other-list", skill, true, true);
@@ -227,7 +184,7 @@ function sortJobSkills(jobID) {
             else if (skill.ID == 3 || skill.ID == 27786) {
                 addImageToList("other-list", skill, true, false);
             }
-        });
+        });*/
 }
 
 function showTooltip(skill) {
