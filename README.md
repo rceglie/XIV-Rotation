@@ -1,6 +1,6 @@
 # XIV Rotation
 
-rceglie.github.io/xiv-rotation2/
+https://rceglie.github.io/XIV-Rotation/
 
 This is a WiP Final Fantasy XIV tool for making openers and testing rotations.
 
