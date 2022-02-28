@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
-function randomClick(){
-    console.log("https://discord.gg/7kMTXJQzQy");
+function discordClick(){
+    window.open("https://discord.gg/7kMTXJQzQy");
 }
 
-class JobIcon extends Component {
+class Header extends Component {
 
     render() {
         return (
-            <div className="job-icon">
+            <div className="Header">
                 <h1>FFXIV Rotation Tool</h1>
                 <button id="discord-btn" onClick={() => {discordClick()}}>Discord</button>
             </div>
@@ -16,4 +16,4 @@ class JobIcon extends Component {
     }
 }
 
-export default JobIcon;
+export default Header;
