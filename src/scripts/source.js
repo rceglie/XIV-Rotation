@@ -225,11 +225,6 @@ function addImageToList(dest, skill, isLocalImg, isGCD) {
 
 }
 
-// Discord button click
-function discord_btn_click() {
-    window.open("https://discord.gg/7kMTXJQzQy");
-}
-
 function clearDivs() {
     if (!MoxSetting) {
         clearRotation();
@@ -364,8 +359,7 @@ function calculate(){
 }
 
 /*
-Calculation of potency:
 
-- if previous GCD was the combo action, use comboPotency
+Source:     370
 
 */
