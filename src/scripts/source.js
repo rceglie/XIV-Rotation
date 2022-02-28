@@ -18,7 +18,7 @@ let rotationBuffs = [];
 
 const xivapi_request = "https://xivapi.com/ClassJob?columns=ID,Name,Icon,ClassJobCategory.Name,ClassJobCategory.ID,Role,IsLimitedJob,ItemSoulCrystalTargetID,Abbreviation";
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => { // Go into job icon stuff
     fetch(xivapi_request)
     .then(response => response.json())
         .then(function (json) {
