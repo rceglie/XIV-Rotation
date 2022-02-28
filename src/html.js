@@ -1,16 +1,5 @@
 export const rawHTML = `
-<head>
-    <meta charset="UTF-8"/>
-    <title>FFXIV Opener Tool</title>
-    <meta name="description" content="A tool for more advanced FFXIV opener creation."/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-</head>
-
 <body>
-    <header>
-        <h1 id="page-title">FFXIV Rotation Tool</h1>
-        <button id="discord-btn" onclick="discord_btn_click()">Discord</button>
-    </header>
     <main>
         <div id="Job-Select" class="hide-scrollbar border-job-select"></div>
         <div id="content">
