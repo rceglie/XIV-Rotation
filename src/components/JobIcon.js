@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 function btnClick(){
-    console.log("https://discord.gg/7kMTXJQzQy");
+    console.log("job icon clicked");
 }
 
 class JobIcon extends Component {
@@ -15,16 +15,9 @@ class JobIcon extends Component {
                     onClick={() => {btnClick()}} 
                     type="radio" 
                     style={{backgroundImage:`url('https://xivapi.com${this.props.icon}')`}}
-                    ></button>
+                ></button>
             </div>
         )
     }
 }
-
-// jobList.forEach(job => {
-//     JobSelectBtn.onclick = function() { getJobSkills(job.ID) };
-//     JobSelectBtn.style.backgroundImage = `url('https://xivapi.com${job.Icon}')`;
-//     document.getElementById("Job-Select").appendChild(JobSelectBtn);
-// });
-
 export default JobIcon;
