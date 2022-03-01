@@ -11,7 +11,7 @@ class JobSelect extends Component {
     constructor(props) {
         super(props)
         this.state = {
-          data: [],
+          jobs: [],
           isLoaded: false,
         }
     }
@@ -21,8 +21,12 @@ class JobSelect extends Component {
         fetch(xivapi_request)
             .then(res => res.json())
             .then(json => {
+                var combatjobs = json.Results.slice(18,40);
+                combatjobs.splice(17,1) // Removes blue mages
+                combatjobs.splice(10,1) // rogue
+                combatjobs.splice(7,1)  // arcanist
                 this.setState({
-                    jobs: json.Results,
+                    jobs: combatjobs,
                     isLoaded: true
                 }) 
             }) 
@@ -37,13 +41,10 @@ class JobSelect extends Component {
             return <h1>Loading...</h1>
 
         } else {
-            
-            console.log(jobs)
-            
 
             return ( 
                 <div className="job-select">
-                    {/* {jobs.map((job) => <JobIcon job={job}/>)} */}
+                    {jobs.map((job) => <JobIcon key={job.ID} job={job}/>)}
                 </div>
             ) 
 
