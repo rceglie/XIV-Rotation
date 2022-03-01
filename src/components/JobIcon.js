@@ -11,10 +11,10 @@ class JobIcon extends Component {
         return (
             <div className="job-icon">
                 <button
-                    className={`job-icon-btn role-${this.props.role}`}
+                    className={`job-icon-btn role-${this.props.job.role}`}
                     onClick={() => {btnClick()}} 
                     type="radio" 
-                    style={{backgroundImage:`url('https://xivapi.com${this.props.icon}')`}}
+                    style={{backgroundImage:`url('https://xivapi.com${this.props.job.Icon}')`}}
                 ></button>
             </div>
         )

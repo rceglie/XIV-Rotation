@@ -7,17 +7,13 @@ function discordClick(){
 
 class JobSelect extends Component {
 
-    constructor(){
-        super()
-        this.jobs = ["dps", "healer", "tank"]
-    }
-
     render() {
+        console.log("rendering")
         return (
             <div className="job-select">
-                {this.jobs.map((job) => <JobIcon role={job} icon="/cj/1/warrior.png"/>)}
+                {this.props.jobs.map((job) => <JobIcon job={job}/>)}
             </div>
-        )
+        ) 
     }
 }
 

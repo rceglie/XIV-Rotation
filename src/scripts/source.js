@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => { // Go into job icon stuff
     .then(response => response.json())
         .then(function (json) {
             json.Results.forEach(job => {
-                console.log(job)
                 // Ignores classes
                 if (job.ItemSoulCrystalTargetID === 0) {return;}
 
@@ -53,17 +52,17 @@ document.addEventListener("DOMContentLoaded", () => { // Go into job icon stuff
                 return roleSortOrder.indexOf(a.Role) - roleSortOrder.indexOf(b.Role);
             });
 
-            // Creates a job selection button for every job
-            jobList.forEach(job => {
-                let JobSelectBtn = document.createElement("input");
-                JobSelectBtn.type = "radio";
-                JobSelectBtn.name = "JobSelect";
-                JobSelectBtn.classList = `job-icon role-${job.Role}`;
-                JobSelectBtn.onclick = function() { getJobSkills(job.ID) };
-                JobSelectBtn.style.backgroundImage = `url('https://xivapi.com${job.Icon}')`;
-                JobSelectBtn.style.backgroundColor = jobSelectBackgroundColor(job.Role);
-                document.getElementById("Job-Select").appendChild(JobSelectBtn);
-            });
+            // // Creates a job selection button for every job
+            // jobList.forEach(job => {
+            //     let JobSelectBtn = document.createElement("input");
+            //     JobSelectBtn.type = "radio";
+            //     JobSelectBtn.name = "JobSelect";
+            //     JobSelectBtn.classList = `job-icon role-${job.Role}`;
+            //     JobSelectBtn.onclick = function() { getJobSkills(job.ID) };
+            //     JobSelectBtn.style.backgroundImage = `url('https://xivapi.com${job.Icon}')`;
+            //     JobSelectBtn.style.backgroundColor = jobSelectBackgroundColor(job.Role);
+            //     document.getElementById("Job-Select").appendChild(JobSelectBtn);
+            // });
         })
         .catch(function (ex) {
             console.log("parsing failed", ex);
