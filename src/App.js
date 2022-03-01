@@ -1,38 +1,29 @@
 import './style/App.css';
-import './scripts/source.js';
+//import './scripts/source.js';
 import { rawHTML } from './html.js';
 import { Parser } from 'html-to-react'
 import Header from './components/Header';
 import JobSelect from './components/JobSelect';
-
-function getJobs(){
-
-  var ret = []
-
-  const xivapi_request = "https://xivapi.com/ClassJob?columns=ID,Name,Icon,ClassJobCategory.Name,ClassJobCategory.ID,Role,IsLimitedJob,ItemSoulCrystalTargetID,Abbreviation";
-
-  fetch(xivapi_request).then(response => response.json()).then(function (json) {
-    json.Results.forEach((job) => {
-      ret.push(job)
-      console.log(job.Icon)
-    })
-  })
-  
-  return(ret)
-}
+import JobIcon from './components/JobIcon';
+import { useEffect, useState } from 'react';
 
 function App() {
 
-  const jobs = getJobs()
-
+  // const jobss = {}
+  // const xivapi_request = "https://xivapi.com/ClassJob?columns=ID,Name,Icon,ClassJobCategory.Name,ClassJobCategory.ID,Role,IsLimitedJob,ItemSoulCrystalTargetID,Abbreviation";
+  // fetch(xivapi_request).then(response => response.json()).then(function (json) {
+  //   json.Results.forEach((job) => {
+  //     jobss[job.ID] = job
+  //     //console.log(job)
+  //   }) 
+  // })
+  //console.log(jobs)
 
   return (
-    <html>
       <div className="App">
         <Header />
-        <JobSelect jobs={jobs}/>
+        <JobSelect />
       </div>
-    </html>
   );
 }
 
