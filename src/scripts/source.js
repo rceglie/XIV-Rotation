@@ -57,9 +57,10 @@ document.addEventListener("DOMContentLoaded", () => { // Go into job icon stuff
                 let JobSelectBtn = document.createElement("input");
                 JobSelectBtn.type = "radio";
                 JobSelectBtn.name = "JobSelect";
-                JobSelectBtn.classList = `JobSelect-Icon Role-${job.Role}`;
+                JobSelectBtn.classList = `job-icon role-${job.Role}`;
                 JobSelectBtn.onclick = function() { getJobSkills(job.ID) };
                 JobSelectBtn.style.backgroundImage = `url('https://xivapi.com${job.Icon}')`;
+                //console.log(job.Icon)
                 JobSelectBtn.style.backgroundColor = jobSelectBackgroundColor(job.Role);
                 document.getElementById("Job-Select").appendChild(JobSelectBtn);
             });
