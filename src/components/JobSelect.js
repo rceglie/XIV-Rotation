@@ -17,24 +17,20 @@ class JobSelect extends Component {
     }
 
     componentDidMount() {
-        var joblist = []
         const xivapi_request = "https://xivapi.com/ClassJob?columns=ID,Name,Icon,ClassJobCategory.Name,ClassJobCategory.ID,Role,IsLimitedJob,ItemSoulCrystalTargetID,Abbreviation";
         fetch(xivapi_request)
             .then(res => res.json())
-            .then(function (json) {
-                json.Results.forEach((job) => {
-                    joblist.push(job)
-                })
-            })
-            this.setState({
-                isLoaded: true,
-                jobs: joblist
+            .then(json => {
+                this.setState({
+                    jobs: json.Results,
+                    isLoaded: true
+                }) 
             }) 
     } 
 
     render() { 
 
-        var { isLoaded, jobs } = this.state
+        var { jobs, isLoaded } = this.state
 
         if(!isLoaded) {
 
@@ -42,9 +38,7 @@ class JobSelect extends Component {
 
         } else {
             
-            jobs.forEach((job) =>{
-                console.log(job)
-            })
+            console.log(jobs)
             
 
             return ( 
