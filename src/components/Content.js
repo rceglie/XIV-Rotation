@@ -8,11 +8,31 @@ function btnClick(){
 
 class Content extends Component {
 
+    constructor(props){
+        super(props)
+        this.state = {
+            currentJob: 0
+        }
+        this.loadJob = this.loadJob.bind(this)
+    }  
+
+    jobSelected(value){
+        this.setState({
+            currentJob: value,
+        }, () => {
+            //f
+        })
+    }
+
+    loadJob() {
+        console.log(this.state.currentJob)
+    }
+  
     render() {
  
         return (
             <div className="content">
-                <JobSelect />
+                <JobSelect updateContent={this.jobSelected.bind(this)}/>
                 <div className="rotation-area">
                     <h1>rotation</h1>
                 </div>

@@ -18,11 +18,10 @@ class JobSelect extends Component {
     }
 
     updateJobSelect(value){
-        console.log(value)
         this.setState({
             currentJob: value
         }, () => {
-            console.log(this.state.currentJob)
+            this.props.updateContent(this.state.currentJob)
         })
     }
 
