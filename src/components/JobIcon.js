@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-function btnClick(){
-    console.log("job icon clicked");
-}
-
 class JobIcon extends Component {
+
+    handleClick() {
+        this.props.updateJobSelect(this.props.job.ID)
+    }
 
     render() {
  
@@ -14,7 +14,7 @@ class JobIcon extends Component {
                     className={`job-icon-btn role-${this.props.role}`} 
                     type="radio"
                     className={`job-icon-btn role-${this.props.job.role}`}
-                    onClick={() => {btnClick()}} 
+                    onClick={() => {this.handleClick()}} 
                     type="radio" 
                     style={{backgroundImage:`url('https://xivapi.com${this.props.job.Icon}')`}}
                 ></button>

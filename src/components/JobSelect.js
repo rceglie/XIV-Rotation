@@ -13,7 +13,17 @@ class JobSelect extends Component {
         this.state = {
           jobs: [],
           isLoaded: false,
+          currentJob: 0
         }
+    }
+
+    updateJobSelect(value){
+        console.log(value)
+        this.setState({
+            currentJob: value
+        }, () => {
+            console.log(this.state.currentJob)
+        })
     }
 
     componentDidMount() {
@@ -44,7 +54,7 @@ class JobSelect extends Component {
 
             return ( 
                 <div className="job-select">
-                    {jobs.map((job) => <JobIcon key={job.ID} job={job}/>)}
+                    {jobs.map((job) => <JobIcon key={job.ID} job={job} updateJobSelect={this.updateJobSelect.bind(this)}/>)}
                 </div>
             ) 
 
